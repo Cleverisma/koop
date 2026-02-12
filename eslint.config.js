@@ -48,7 +48,7 @@ const ignores = [
 
 export default tseslint.config(
   globalIgnores(ignores),
-  js.configs.recommended,
+  // js.configs.recommended,
   tseslint.configs.recommended,
   qwikEslint9Plugin.configs.recommended,
   {
