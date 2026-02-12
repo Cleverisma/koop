@@ -1,7 +1,7 @@
 import { component$, useStyles$ } from "@builder.io/qwik";
 import { type DocumentHead, routeAction$, Form, z, zod$ } from "@builder.io/qwik-city";
-import { LuInstagram, LuFacebook, LuTwitter, LuPlane, LuMap, LuCompass, LuGlobe } from "@qwikest/icons/lucide";
-import Logo from "~/media/logo2.png?jsx";
+import { LuInstagram, LuFacebook, LuTwitter, LuPlane, LuMap, LuCompass } from "@qwikest/icons/lucide";
+import Logo from "~/media/logo3.png?jsx";
 
 import { tursoClient } from "~/utils/turso";
 
@@ -83,7 +83,7 @@ export default component$(() => {
 
         {/* Header / Logo Area */}
         <header class="w-full max-w-7xl pt-8">
-          <div class="flex items-center gap-2">
+          <div class="flex items-center justify-center gap-2">
             <div class="glass-panel rounded-xl p-4 transition-transform hover:scale-105">
               <Logo class="h-24 w-auto drop-shadow-lg" />
             </div>
