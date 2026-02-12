@@ -1,6 +1,7 @@
 import { component$, useStyles$ } from "@builder.io/qwik";
 import { type DocumentHead, routeAction$, Form, z, zod$ } from "@builder.io/qwik-city";
 import { LuInstagram, LuFacebook, LuTwitter, LuPlane, LuMap, LuCompass, LuGlobe } from "@qwikest/icons/lucide";
+import Logo from "~/media/logo2.png?jsx";
 
 import { tursoClient } from "~/utils/turso";
 
@@ -81,22 +82,11 @@ export default component$(() => {
       <div class="relative z-20 flex min-h-screen flex-col items-center justify-between px-4 py-8 sm:px-6 lg:px-8">
 
         {/* Header / Logo Area */}
-        <header class="w-full max-w-7xl pt-4">
-          <div class="flex flex-col items-start gap-0 leading-none">
-            {/* Logo Approximation */}
-            <div class="flex items-center gap-2">
-              <div class="relative flex items-center justify-center">
-                <span class="text-5xl font-extrabold tracking-tighter text-white brand-text-shadow">K</span>
-                <div class="relative h-10 w-10 flex items-center justify-center">
-                  <LuGlobe class="h-10 w-10 text-[#003366] fill-[#003366] bg-white rounded-full p-[2px]" />
-                  <span class="absolute text-orange-500 font-bold top-[2px] right-0 transform translate-x-1 -translate-y-1">
-                    <LuPlane class="h-6 w-6 transform -rotate-45" />
-                  </span>
-                </div>
-                <span class="text-5xl font-extrabold tracking-tighter text-white brand-text-shadow">op</span>
-              </div>
+        <header class="w-full max-w-7xl pt-8">
+          <div class="flex items-center gap-2">
+            <div class="glass-panel rounded-xl p-4 transition-transform hover:scale-105">
+              <Logo class="h-24 w-auto drop-shadow-lg" />
             </div>
-            <span class="ml-1 text-sm font-bold tracking-[0.3em] text-white/90 brand-text-shadow">VIAJES</span>
           </div>
         </header>
 
@@ -170,8 +160,8 @@ export default component$(() => {
         </main>
 
         {/* Footer */}
-        <footer class="w-full max-w-7xl pb-4">
-          <div class="flex flex-col items-center justify-between gap-4 border-t border-white/20 pt-6 sm:flex-row bg-black/20 p-6 rounded-xl backdrop-blur-sm sm:bg-transparent sm:backdrop-blur-none sm:p-0">
+        <footer class="w-full max-w-7xl pb-8">
+          <div class="flex flex-col items-center justify-between gap-4 border-t border-white/20 pt-10 sm:flex-row px-6 sm:px-0">
             <p class="text-sm text-gray-300 text-shadow text-center sm:text-left">
               © {new Date().getFullYear()} Koop Viajes. Todos los derechos reservados.
             </p>
@@ -189,8 +179,8 @@ export default component$(() => {
             </div>
           </div>
         </footer>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 });
 
