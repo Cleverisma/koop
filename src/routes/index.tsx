@@ -163,7 +163,7 @@ export default component$(() => {
         <footer class="w-full max-w-7xl pb-8">
           <div class="flex flex-col items-center justify-between gap-4 border-t border-white/20 pt-10 sm:flex-row px-6 sm:px-0">
             <p class="text-sm text-gray-300 text-shadow text-center sm:text-left">
-              © {new Date().getFullYear()} Koop Viajes. Todos los derechos reservados.
+              © {new Date().getFullYear()} Koop Viajes. Todos los derechos reservados. <span class="hidden sm:inline">|</span> <span class="block sm:inline mt-2 sm:mt-0">Desarrollado por <a href="https://cleverisma.com/" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:text-cyan-300 transition-colors font-medium">Cleverisma</a></span>
             </p>
 
             <div class="flex gap-6">
