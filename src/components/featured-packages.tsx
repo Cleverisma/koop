@@ -5,20 +5,21 @@ import type { TourPackage } from '../types/packages';
 
 interface FeaturedPackagesProps {
     packages: TourPackage[];
+    title?: string;
+    subtitle?: string;
 }
 
-export const FeaturedPackages = component$<FeaturedPackagesProps>(({ packages }) => {
+export const FeaturedPackages = component$<FeaturedPackagesProps>(({ packages, title = "Destinos Destacados", subtitle = "Explora nuestras opciones más populares y elegidas por nuestros viajeros. Garantía de calidad y excelentes precios." }) => {
     return (
-        <section class="py-20 md:py-28 bg-gray-50">
+        <section class="py-20 md:py-28 bg-gray-50 border-b border-gray-100 last:border-b-0">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center md:text-left mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
                     <div class="max-w-2xl">
                         <h2 class="text-3xl md:text-5xl font-extrabold text-blue-900 mb-6 tracking-tight">
-                            Destinos Destacados
+                            {title}
                         </h2>
                         <p class="text-lg md:text-xl text-gray-600 leading-relaxed">
-                            Explora nuestras opciones más populares y elegidas por nuestros viajeros.
-                            Garantía de calidad y excelentes precios.
+                            {subtitle}
                         </p>
                     </div>
                     <button class="hidden md:inline-flex items-center justify-center text-blue-600 font-bold hover:text-blue-800 transition-colors group text-lg">
@@ -34,7 +35,7 @@ export const FeaturedPackages = component$<FeaturedPackagesProps>(({ packages })
                                 {/* Image Container */}
                                 <div class="relative h-72 overflow-hidden bg-gray-200">
                                     <img
-                                        src={pkg.imageUrl}
+                                        src={pkg.image_url}
                                         alt={pkg.title}
                                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                         loading="lazy"
@@ -47,7 +48,7 @@ export const FeaturedPackages = component$<FeaturedPackagesProps>(({ packages })
                                     <div class="absolute top-4 right-4 flex flex-col gap-2">
                                         <div class="bg-white/95 backdrop-blur-sm px-4 py-1.5 rounded-full text-sm font-bold text-blue-900 shadow-sm flex items-center gap-1.5 border border-white/20">
                                             <LuCalendar class="w-4 h-4 text-orange-500" />
-                                            {pkg.duration.days} Días / {pkg.duration.nights} Noches
+                                            {pkg.duration}
                                         </div>
                                     </div>
                                 </div>
@@ -56,12 +57,7 @@ export const FeaturedPackages = component$<FeaturedPackagesProps>(({ packages })
                                 <div class="p-6 md:p-8 flex flex-col flex-1 relative bg-white">
                                     <div class="flex items-center gap-2 text-sm text-gray-500 mb-3 font-medium">
                                         <LuMapPin class="w-4 h-4 text-gray-400 shrink-0" />
-                                        <span class="truncate">{pkg.destination}</span>
-                                        <span class="mx-1 shrink-0">•</span>
-                                        <div class="flex items-center gap-1 text-yellow-500 shrink-0">
-                                            <LuStar class="w-4 h-4 fill-current" />
-                                            <span class="text-gray-700 font-bold">{pkg.rating}</span>
-                                        </div>
+                                        <span class="truncate capitalize">{pkg.category.replace(/-/g, ' ')}</span>
                                     </div>
 
                                     <h3 class="text-2xl font-bold text-gray-900 mb-4 tracking-tight group-hover:text-blue-600 transition-colors line-clamp-2">
