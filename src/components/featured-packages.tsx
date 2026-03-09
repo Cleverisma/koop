@@ -1,6 +1,6 @@
 import { component$ } from '@builder.io/qwik';
 import { Link } from '@builder.io/qwik-city';
-import { LuMapPin, LuCalendar, LuStar } from '@qwikest/icons/lucide';
+import { LuMapPin, LuCalendar } from '@qwikest/icons/lucide';
 import type { TourPackage } from '../types/packages';
 
 interface FeaturedPackagesProps {

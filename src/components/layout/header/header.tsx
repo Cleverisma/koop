@@ -1,4 +1,4 @@
-import { component$, useSignal, useOnWindow, $, useVisibleTask$ } from '@builder.io/qwik';
+import { component$, useSignal, useOnWindow, $ } from '@builder.io/qwik';
 import { Link } from '@builder.io/qwik-city';
 import { LuMenu, LuX } from '@qwikest/icons/lucide';
 
@@ -16,19 +16,18 @@ export const Header = component$(() => {
 
   return (
     <header
-      class={`fixed w-full z-[100] transition-all duration-300 ${
-        isScrolled.value
+      class={`fixed w-full z-[100] transition-all duration-300 ${isScrolled.value
           ? 'bg-white/95 backdrop-blur-md shadow-md py-3'
           : 'bg-transparent py-5'
-      }`}
+        }`}
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center">
-          
+
           {/* Logo */}
           <Link href="/landing" class="flex-shrink-0 flex items-center gap-2 group">
             <span class={`text-3xl font-black tracking-tighter transition-colors ${isScrolled.value ? 'text-blue-900' : 'text-white drop-shadow-md'}`}>
-               KOOP.
+              KOOP.
             </span>
           </Link>
 
@@ -41,13 +40,12 @@ export const Header = component$(() => {
           </div>
 
           <div class="hidden md:flex items-center space-x-4">
-            <Link 
-              href="/contacto" 
-              class={`px-6 py-2.5 rounded-full font-bold transition-all shadow-sm hover:shadow-md transform hover:-translate-y-0.5 ${
-                isScrolled.value 
-                  ? 'bg-orange-500 text-white hover:bg-orange-600' 
+            <Link
+              href="/contacto"
+              class={`px-6 py-2.5 rounded-full font-bold transition-all shadow-sm hover:shadow-md transform hover:-translate-y-0.5 ${isScrolled.value
+                  ? 'bg-orange-500 text-white hover:bg-orange-600'
                   : 'bg-white text-blue-900 hover:bg-blue-50'
-              }`}
+                }`}
             >
               Contactanos
             </Link>
@@ -67,10 +65,9 @@ export const Header = component$(() => {
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div 
-        class={`fixed inset-0 z-40 bg-white transform transition-transform duration-300 md:hidden pt-20 ${
-          isMobileMenuOpen.value ? 'translate-x-0' : 'translate-x-full'
-        }`}
+      <div
+        class={`fixed inset-0 z-40 bg-white transform transition-transform duration-300 md:hidden pt-20 ${isMobileMenuOpen.value ? 'translate-x-0' : 'translate-x-full'
+          }`}
       >
         <div class="flex flex-col px-6 py-8 space-y-6 text-xl">
           <Link href="/paquetes/playa-y-aventura" class="font-bold text-blue-900 border-b border-gray-100 pb-4">Playa y Aventura</Link>
